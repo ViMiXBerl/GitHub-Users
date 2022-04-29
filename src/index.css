@@ -1,0 +1,9 @@
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+   
+}
+
+.search-form-label{
+    background-image: url("./assets/images/Loupe.svg");
+}

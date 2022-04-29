@@ -1,5 +1,11 @@
+import MainScreen from "./pages/MainScreen/MainScreen";
+
 function App() {
-	return <></>;
+	return (
+		<>
+			<MainScreen />
+		</>
+	);
 }
 
 export default App;
