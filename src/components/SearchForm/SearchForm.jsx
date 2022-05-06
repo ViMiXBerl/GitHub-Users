@@ -1,28 +1,23 @@
 import { Form, Input, FormWrapper } from "./SearchFormStyled";
 import { Loupe } from "../../assets";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getAsyncUser, selectUser, selectLoading } from "./SearchFormSlice";
+import { useSelector } from "react-redux";
 
 const SearchForm = () => {
-	const [data, setData] = useState([]);
 	const [userName, setUserName] = useState("");
-	const [url, setUrl] = useState();
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const { data } = await axios.get(url);
-
-			setData(data);
-		};
-
-		fetchData();
-	}, [url]);
+	const dispatch = useDispatch();
+	const userNameValue = userName;
+	// const user = useSelector(selectUser);
+	// const loading = useSelector(selectLoading);
 
 	return (
 		<Form
 			onSubmit={(event) => {
-				setUrl(`https://api.github.com/users/${userName}`);
 				event.preventDefault();
+				dispatch(getAsyncUser(userNameValue));
 			}}
 		>
 			<FormWrapper>
