@@ -5,7 +5,7 @@ import { API_URL } from "../../api/api";
 const initialState = {
 	user: [],
 	loading: false,
-	error: "",
+	error: null,
 };
 
 export const getAsyncUser = createAsyncThunk(
@@ -22,6 +22,7 @@ export const searchFormSlice = createSlice({
 	reducers: {
 		setUser: (state, action) => {
 			state.user = action.payload;
+			state.loading = false;
 		},
 	},
 	extraReducers: (builder) => {
@@ -30,12 +31,12 @@ export const searchFormSlice = createSlice({
 				state.loading = true;
 			})
 			.addCase(getAsyncUser.fulfilled, (state, action) => {
+				state.user = state.user.concat(action.payload);
 				state.loading = false;
-				state.user = action.payload;
 			})
 			.addCase(getAsyncUser.rejected, (state, action) => {
 				state.loading = false;
-				state.error = action.payload;
+				state.error = action.error.message;
 			});
 	},
 });
