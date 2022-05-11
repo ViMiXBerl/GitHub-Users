@@ -3,6 +3,7 @@ import { Loupe } from "../../assets";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAsyncUser } from "./SearchFormSlice";
+import { getAsyncRepos } from "../RepositoriesList/RepositoriesListSlice";
 
 const SearchForm = () => {
 	const [userName, setUserName] = useState("");
@@ -15,6 +16,7 @@ const SearchForm = () => {
 			onSubmit={(event) => {
 				event.preventDefault();
 				dispatch(getAsyncUser(userNameValue));
+				dispatch(getAsyncRepos(userNameValue));
 			}}
 		>
 			<FormWrapper>
