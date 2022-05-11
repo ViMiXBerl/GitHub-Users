@@ -1,11 +1,11 @@
-import { User } from "../../assets";
+import { UserIcon } from "../../assets";
 import { InformationText } from "../InformationText/InformationText";
-import { Main } from "../InitialState/InitialStateStyles";
+import { Main } from "../InitialState/InitialStateStyled";
 
 const NotFound = () => {
 	return (
 		<Main>
-			<User width={"110px"} />
+			<UserIcon />
 			<InformationText>User not found</InformationText>
 		</Main>
 	);

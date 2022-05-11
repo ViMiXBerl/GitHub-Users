@@ -3,9 +3,9 @@ import { colors } from "../../styles/colors";
 import { Icon } from "../../assets";
 
 export const HeaderStyled = styled.header`
-	position: absolute;
 	width: 100%;
 	background-color: ${colors.header};
+	position: absolute;
 `;
 
 export const HeaderWrapper = styled.div`

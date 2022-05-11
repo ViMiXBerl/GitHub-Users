@@ -1,4 +1,4 @@
-import { Main } from "./InitialStateStyles";
+import { Main } from "./InitialStateStyled";
 import { InitialLoupe } from "../../assets";
 import { InformationText } from "../InformationText/InformationText";
 

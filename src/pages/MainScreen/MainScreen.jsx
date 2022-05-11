@@ -8,6 +8,7 @@ import {
 } from "../../components/SearchForm/SearchFormSlice";
 import { useSelector } from "react-redux";
 import NotFound from "../../components/NotFound/NotFound";
+import ProfileContainer from "../../components/ProfileContainer/ProfileContainer";
 
 const MainScreen = () => {
 	const user = useSelector(selectUser);
@@ -22,7 +23,7 @@ const MainScreen = () => {
 			) : error ? (
 				<NotFound />
 			) : user.length !== 0 ? (
-				"profile"
+				<ProfileContainer />
 			) : (
 				<InitialState />
 			)}

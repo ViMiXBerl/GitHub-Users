@@ -32,7 +32,7 @@ export const searchFormSlice = createSlice({
 				state.error = null;
 			})
 			.addCase(getAsyncUser.fulfilled, (state, action) => {
-				state.user = state.user.concat(...action.payload);
+				state.user = state.user.concat(action.payload);
 				state.loading = false;
 			})
 			.addCase(getAsyncUser.rejected, (state, action) => {

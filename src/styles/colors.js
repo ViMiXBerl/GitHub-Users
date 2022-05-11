@@ -4,4 +4,5 @@ export const colors = {
 	font: "#000000",
 	informationFont: "#808080",
 	loader: "#def0fc",
+	background: "#E5E5E5",
 };
