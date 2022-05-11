@@ -2,16 +2,13 @@ import { Form, Input, FormWrapper } from "./SearchFormStyled";
 import { Loupe } from "../../assets";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getAsyncUser, selectUser, selectLoading } from "./SearchFormSlice";
-import { useSelector } from "react-redux";
+import { getAsyncUser } from "./SearchFormSlice";
 
 const SearchForm = () => {
 	const [userName, setUserName] = useState("");
 
 	const dispatch = useDispatch();
 	const userNameValue = userName;
-	// const user = useSelector(selectUser);
-	// const loading = useSelector(selectLoading);
 
 	return (
 		<Form

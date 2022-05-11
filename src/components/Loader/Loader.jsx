@@ -1,5 +1,5 @@
 import { LoaderStyled, LoaderWrapper } from "./LoaderStyled";
-import styles from "./Loader.css";
+import "./Loader.css";
 
 const Loader = () => {
 	return (

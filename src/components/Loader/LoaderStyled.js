@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 export const LoaderWrapper = styled.div`
 	font-family: sans-serif;
@@ -7,7 +8,7 @@ export const LoaderWrapper = styled.div`
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	color: #def0fc;
+	color: ${colors.loader};
 	line-height: 1.5;
 	font-size: 1em;
 	background: #fff;
@@ -20,6 +21,6 @@ export const LoaderStyled = styled.div`
 	line-height: 1;
 	margin: 0.5em;
 	animation: anim-rotate 2s infinite linear;
-	color: #0064eb;
+	color: ${colors.header};
 	text-shadow: 0 0 0.25em rgba(255, 255, 255, 0.3);
 `;

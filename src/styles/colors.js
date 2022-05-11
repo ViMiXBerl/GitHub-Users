@@ -3,4 +3,5 @@ export const colors = {
 	input: "#FFFFFF",
 	font: "#000000",
 	informationFont: "#808080",
+	loader: "#def0fc",
 };

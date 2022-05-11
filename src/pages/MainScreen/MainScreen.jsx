@@ -4,17 +4,28 @@ import Loader from "../../components/Loader/Loader";
 import {
 	selectUser,
 	selectLoading,
+	selectError,
 } from "../../components/SearchForm/SearchFormSlice";
 import { useSelector } from "react-redux";
+import NotFound from "../../components/NotFound/NotFound";
 
 const MainScreen = () => {
 	const user = useSelector(selectUser);
 	const loading = useSelector(selectLoading);
+	const error = useSelector(selectError);
 
 	return (
 		<>
 			<Header />
-			{loading ? <Loader /> : <InitialState />}
+			{loading ? (
+				<Loader />
+			) : error ? (
+				<NotFound />
+			) : user.length !== 0 ? (
+				"profile"
+			) : (
+				<InitialState />
+			)}
 		</>
 	);
 };
