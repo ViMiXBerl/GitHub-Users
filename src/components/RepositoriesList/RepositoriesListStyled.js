@@ -5,5 +5,5 @@ export const RepositoriesListWrapper = styled.div`
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
-	margin: 7rem 0 0 0;
+	padding: 7rem 0 0 0;
 `;

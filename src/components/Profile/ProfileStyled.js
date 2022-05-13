@@ -6,7 +6,7 @@ export const ProfileWrapper = styled.div`
 	justify-content: flex-start;
 	flex-direction: column;
 	width: 30%;
-	margin: 7rem 0 0 0;
+	padding: 7rem 0 0 0;
 `;
 
 export const ProfileImg = styled.img`

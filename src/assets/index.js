@@ -4,3 +4,4 @@ export { ReactComponent as InitialLoupe } from "./images/InitialLoup.svg";
 export { ReactComponent as UserIcon } from "./images/Union.svg";
 export { ReactComponent as FollowersIcon } from "./images/shared.svg";
 export { ReactComponent as FollowingIcon } from "./images/provate.svg";
+export { ReactComponent as EmptyIcon } from "./images/Empty.svg";

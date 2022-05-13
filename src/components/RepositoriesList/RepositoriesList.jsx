@@ -6,6 +6,7 @@ import {
 import { useSelector } from "react-redux";
 import { selectUser } from "../SearchForm/SearchFormSlice";
 import { RepositoriesListWrapper } from "./RepositoriesListStyled";
+import EmptyRepositoryList from "../EmptyRepositoryList/EmptyRepositoryList";
 
 const RepositoriesList = () => {
 	const repos = useSelector(selectRepos);
@@ -14,7 +15,7 @@ const RepositoriesList = () => {
 	return (
 		<RepositoriesListWrapper>
 			{user.public_repos === 0 ? (
-				"Repository list is empty"
+				<EmptyRepositoryList />
 			) : (
 				<p>Repositories ({user.public_repos})</p>
 			)}
