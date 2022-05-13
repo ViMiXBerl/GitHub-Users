@@ -31,10 +31,6 @@ export const searchFormSlice = createSlice({
 				state.loading = true;
 				state.error = null;
 			})
-			.addCase(getAsyncUser.fulfilled, (state, action) => {
-				state.user = state.user.concat(action.payload);
-				state.loading = false;
-			})
 			.addCase(getAsyncUser.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.error.message;

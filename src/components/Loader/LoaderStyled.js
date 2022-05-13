@@ -11,7 +11,7 @@ export const LoaderWrapper = styled.div`
 	color: ${colors.loader};
 	line-height: 1.5;
 	font-size: 1em;
-	background: #fff;
+	background: ${colors.background};
 `;
 
 export const LoaderStyled = styled.div`

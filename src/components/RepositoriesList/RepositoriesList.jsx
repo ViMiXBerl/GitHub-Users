@@ -1,12 +1,13 @@
-import {
-	selectRepos,
-	selectLoading,
-	selectError,
-} from "./RepositoriesListSlice";
+import { selectRepos } from "./RepositoriesListSlice";
 import { useSelector } from "react-redux";
 import { selectUser } from "../SearchForm/SearchFormSlice";
-import { RepositoriesListWrapper } from "./RepositoriesListStyled";
+import {
+	RepositoriesListWrapper,
+	RepositoriesListHeader,
+	RepositoryItemWrapper,
+} from "./RepositoriesListStyled";
 import EmptyRepositoryList from "../EmptyRepositoryList/EmptyRepositoryList";
+import RepositoryItem from "../RepositoryItem/RepositoryItem";
 
 const RepositoriesList = () => {
 	const repos = useSelector(selectRepos);
@@ -17,7 +18,20 @@ const RepositoriesList = () => {
 			{user.public_repos === 0 ? (
 				<EmptyRepositoryList />
 			) : (
-				<p>Repositories ({user.public_repos})</p>
+				<>
+					<RepositoriesListHeader>
+						Repositories ({user.public_repos})
+					</RepositoriesListHeader>
+					{repos.map((repo) => (
+						<RepositoryItemWrapper key={repo.id}>
+							<RepositoryItem
+								repository={repo.name}
+								description={repo.description}
+								href={repo.html_url}
+							/>
+						</RepositoryItemWrapper>
+					))}
+				</>
 			)}
 		</RepositoriesListWrapper>
 	);

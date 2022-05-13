@@ -31,10 +31,6 @@ export const RepositoriesListSlice = createSlice({
 				state.loading = true;
 				state.error = null;
 			})
-			.addCase(getAsyncRepos.fulfilled, (state, action) => {
-				state.repos = state.repos.concat(action.payload);
-				state.loading = false;
-			})
 			.addCase(getAsyncRepos.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.error.message;
@@ -43,8 +39,6 @@ export const RepositoriesListSlice = createSlice({
 });
 
 export const selectRepos = (state) => state.repositoriesList.repos;
-export const selectLoading = (state) => state.repositoriesList.loading;
-export const selectError = (state) => state.repositoriesList.error;
 
 export const { setRepos } = RepositoriesListSlice.actions;
 export default RepositoriesListSlice.reducer;
