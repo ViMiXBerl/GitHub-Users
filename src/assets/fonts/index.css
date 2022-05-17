@@ -18,3 +18,10 @@
     font-weight: 600;
     src: url("./Inter-SemiBold.ttf");
 }
+
+@font-face {
+    font-family: "WorkSans, 400, Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./WorkSans-Regular.ttf");
+}

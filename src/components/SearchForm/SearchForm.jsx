@@ -16,7 +16,7 @@ const SearchForm = () => {
 			onSubmit={(event) => {
 				event.preventDefault();
 				dispatch(getAsyncUser(userNameValue));
-				dispatch(getAsyncRepos(userNameValue));
+				dispatch(getAsyncRepos({ userNameValue }));
 			}}
 		>
 			<FormWrapper>

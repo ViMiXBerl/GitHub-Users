@@ -10,8 +10,15 @@ const initialState = {
 
 export const getAsyncRepos = createAsyncThunk(
 	"repositoriesList/getAsyncRepos",
-	async (userNameValue, { rejectWithValue, dispatch }) => {
-		const response = await axios.get(`${API_URL}${userNameValue}${API_REPO}`);
+	async ({ userNameValue, per_page, page }, { dispatch }) => {
+		console.log(userNameValue, per_page, page);
+		console.log({ userNameValue, per_page, page });
+
+		const response = await axios.get(
+			`${API_URL}${userNameValue}${API_REPO}?per_page=${per_page ?? 4}&page=${
+				page ?? 1
+			}`
+		);
 		dispatch(setRepos(response.data));
 	}
 );
@@ -23,6 +30,9 @@ export const RepositoriesListSlice = createSlice({
 		setRepos: (state, action) => {
 			state.repos = action.payload;
 			state.loading = false;
+		},
+		setPage: (state, action) => {
+			state.page = action.payload;
 		},
 	},
 	extraReducers: (builder) => {
@@ -39,6 +49,7 @@ export const RepositoriesListSlice = createSlice({
 });
 
 export const selectRepos = (state) => state.repositoriesList.repos;
+export const selectLoading = (state) => state.repositoriesList.loading;
 
 export const { setRepos } = RepositoriesListSlice.actions;
 export default RepositoriesListSlice.reducer;

@@ -8,10 +8,14 @@ import {
 } from "./RepositoriesListStyled";
 import EmptyRepositoryList from "../EmptyRepositoryList/EmptyRepositoryList";
 import RepositoryItem from "../RepositoryItem/RepositoryItem";
+import Pagination from "../Pagination/Pagination";
+import { selectLoading } from "./RepositoriesListSlice";
+import Loader from "../Loader/Loader";
 
 const RepositoriesList = () => {
 	const repos = useSelector(selectRepos);
 	const user = useSelector(selectUser);
+	const loading = useSelector(selectLoading);
 
 	return (
 		<RepositoriesListWrapper>
@@ -22,15 +26,20 @@ const RepositoriesList = () => {
 					<RepositoriesListHeader>
 						Repositories ({user.public_repos})
 					</RepositoriesListHeader>
-					{repos.map((repo) => (
-						<RepositoryItemWrapper key={repo.id}>
-							<RepositoryItem
-								repository={repo.name}
-								description={repo.description}
-								href={repo.html_url}
-							/>
-						</RepositoryItemWrapper>
-					))}
+					{loading ? (
+						<Loader />
+					) : (
+						repos.map((repo) => (
+							<RepositoryItemWrapper key={repo.id}>
+								<RepositoryItem
+									repository={repo.name}
+									description={repo.description}
+									href={repo.html_url}
+								/>
+							</RepositoryItemWrapper>
+						))
+					)}
+					<Pagination itemsPerPage={4} />
 				</>
 			)}
 		</RepositoriesListWrapper>

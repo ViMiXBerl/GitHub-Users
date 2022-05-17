@@ -7,7 +7,7 @@ export const ProfileWrapper = styled.div`
 	flex-direction: column;
 	width: 30%;
 	padding: 7rem 0 0 0;
-	// margin: 0 5rem 0 0;
+	overflow-y: auto;
 `;
 
 export const ProfileImg = styled.img`

@@ -7,6 +7,7 @@ export const RepositoriesListWrapper = styled.div`
 	justify-content: flex-start;
 	flex-direction: column;
 	padding: 6.5rem 0 0 0;
+	overflow-y: auto;
 `;
 
 export const RepositoriesListHeader = styled.p`
