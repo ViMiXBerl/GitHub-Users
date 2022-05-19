@@ -9,6 +9,7 @@ import {
 import { useSelector } from "react-redux";
 import NotFound from "../../components/NotFound/NotFound";
 import ProfileContainer from "../../components/ProfileContainer/ProfileContainer";
+import { LoaderWrapper } from "../../components/Loader/LoaderStyled";
 
 const MainScreen = () => {
 	const user = useSelector(selectUser);
@@ -19,7 +20,9 @@ const MainScreen = () => {
 		<>
 			<Header />
 			{loading ? (
-				<Loader />
+				<LoaderWrapper>
+					<Loader />
+				</LoaderWrapper>
 			) : error ? (
 				<NotFound />
 			) : user.length !== 0 ? (

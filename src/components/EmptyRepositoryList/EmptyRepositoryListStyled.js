@@ -7,4 +7,8 @@ export const EmptyRepositoryListWrapper = styled.div`
 	align-items: center;
 	height: 100vh;
 	margin: 0;
+
+	@media (max-width: 1330px) {
+		height: 50vh;
+	}
 `;

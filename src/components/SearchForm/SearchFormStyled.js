@@ -5,6 +5,10 @@ import "../../assets/fonts/index.css";
 export const Form = styled.form`
 	width: 40%;
 	margin: 0;
+
+	@media (max-width: 600px) {
+		width: 100%;
+	}
 `;
 
 export const Input = styled.input`

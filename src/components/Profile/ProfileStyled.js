@@ -8,6 +8,11 @@ export const ProfileWrapper = styled.div`
 	width: 30%;
 	padding: 7rem 0 0 0;
 	overflow-y: auto;
+
+	@media (max-width: 1330px) {
+		overflow-y: unset;
+		margin: 0;
+	}
 `;
 
 export const ProfileImg = styled.img`

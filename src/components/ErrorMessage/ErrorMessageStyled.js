@@ -7,7 +7,11 @@ export const ErrorMessageWrapper = styled.div`
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 70%;
     border: 2px solid ${colors.errorBorder};
+
+    @media (max-width: 550px) {
+        width: 100%;
+	}
 }
 `;

@@ -1,4 +1,8 @@
-import { StyledPagination, PaginationWrapper } from "./PaginationStyled";
+import {
+	StyledPagination,
+	PaginationWrapper,
+	PaginationText,
+} from "./PaginationStyled";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../SearchForm/SearchFormSlice";
 import { getAsyncRepos } from "../RepositoriesList/RepositoriesListSlice";
@@ -29,9 +33,9 @@ const Pagination = ({ itemsPerPage }) => {
 
 	return (
 		<PaginationWrapper>
-			<p style={{ margin: 0 }}>{`${pageOffset + 1}-${
-				endOffset - difference
-			} of ${user.public_repos} items`}</p>
+			<PaginationText>{`${pageOffset + 1}-${endOffset - difference} of ${
+				user.public_repos
+			} items`}</PaginationText>
 			<StyledPagination
 				pageCount={pageCount}
 				pageRangeDisplayed={3}

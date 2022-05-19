@@ -16,6 +16,7 @@ import RepositoryItem from "../RepositoryItem/RepositoryItem";
 import Pagination from "../Pagination/Pagination";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { LoaderRepositoryWrapper } from "../Loader/LoaderStyled";
 
 const RepositoriesList = () => {
 	const repos = useSelector(selectRepos);
@@ -34,7 +35,9 @@ const RepositoriesList = () => {
 					</RepositoriesListHeader>
 
 					{loading ? (
-						<Loader />
+						<LoaderRepositoryWrapper>
+							<Loader />
+						</LoaderRepositoryWrapper>
 					) : error ? (
 						<ErrorMessage />
 					) : (

@@ -9,6 +9,13 @@ export const RepositoriesListWrapper = styled.div`
 	flex-direction: column;
 	padding: 6.5rem 0 0 0;
 	overflow-y: auto;
+
+	@media (max-width: 1330px) {
+		padding: 0;
+		overflow-y: unset;
+		margin: 4rem auto;
+		width: 87%;
+	}
 `;
 
 export const RepositoriesListHeader = styled.p`
@@ -24,6 +31,11 @@ export const RepositoryItemWrapper = styled.div`
 	width: 100%;
 	flex-direction: column;
 	margin: 1rem 0 0 0;
+
+	@media (max-width: 1330px) {
+		justify-content: center;
+		align-items: center;
+	}
 `;
 
 export const RepositoryItemsContainer = styled.div`

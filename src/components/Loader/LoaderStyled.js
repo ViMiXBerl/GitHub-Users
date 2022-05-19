@@ -24,3 +24,15 @@ export const LoaderStyled = styled.div`
 	color: ${colors.header};
 	text-shadow: 0 0 0.25em rgba(255, 255, 255, 0.3);
 `;
+
+export const LoaderRepositoryWrapper = styled.div`
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	color: ${colors.loader};
+	line-height: 1.5;
+	font-size: 1em;
+	background: ${colors.background};
+`;
