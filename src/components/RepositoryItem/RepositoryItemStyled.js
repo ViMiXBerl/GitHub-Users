@@ -10,6 +10,7 @@ export const RepositoryItemCard = styled.div`
 	gap: 16px;
 	background-color: ${colors.input};
 	border-radius: 6px;
+	word-break: break-word;
 `;
 
 export const RepositoryLink = styled.a`
