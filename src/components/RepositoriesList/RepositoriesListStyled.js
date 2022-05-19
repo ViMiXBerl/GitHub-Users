@@ -3,8 +3,9 @@ import { colors } from "../../styles/colors";
 
 export const RepositoriesListWrapper = styled.div`
 	width: 70%;
+	height: 100vh;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	flex-direction: column;
 	padding: 6.5rem 0 0 0;
 	overflow-y: auto;
@@ -23,4 +24,8 @@ export const RepositoryItemWrapper = styled.div`
 	width: 100%;
 	flex-direction: column;
 	margin: 1rem 0 0 0;
+`;
+
+export const RepositoryItemsContainer = styled.div`
+	width: 100%;
 `;

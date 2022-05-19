@@ -19,6 +19,7 @@ export const RepositoryLink = styled.a`
 	line-height: 29px;
 	color: ${colors.header};
 	text-decoration: none;
+	width: fit-content;
 `;
 
 export const RepositoryDescription = styled.p`

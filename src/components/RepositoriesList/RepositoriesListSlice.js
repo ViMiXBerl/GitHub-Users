@@ -10,16 +10,17 @@ const initialState = {
 
 export const getAsyncRepos = createAsyncThunk(
 	"repositoriesList/getAsyncRepos",
-	async ({ userNameValue, per_page, page }, { dispatch }) => {
-		console.log(userNameValue, per_page, page);
-		console.log({ userNameValue, per_page, page });
-
-		const response = await axios.get(
-			`${API_URL}${userNameValue}${API_REPO}?per_page=${per_page ?? 4}&page=${
-				page ?? 1
-			}`
-		);
-		dispatch(setRepos(response.data));
+	async ({ userNameValue, per_page, page }, { dispatch, rejectWithValue }) => {
+		try {
+			const response = await axios.get(
+				`${API_URL}${userNameValue}${API_REPO}?per_page=${per_page ?? 4}&page=${
+					page ?? 1
+				}`
+			);
+			dispatch(setRepos(response.data));
+		} catch (error) {
+			return rejectWithValue(error.response);
+		}
 	}
 );
 
@@ -50,6 +51,7 @@ export const RepositoriesListSlice = createSlice({
 
 export const selectRepos = (state) => state.repositoriesList.repos;
 export const selectLoading = (state) => state.repositoriesList.loading;
+export const selectError = (state) => state.repositoriesList.error;
 
 export const { setRepos } = RepositoriesListSlice.actions;
 export default RepositoriesListSlice.reducer;

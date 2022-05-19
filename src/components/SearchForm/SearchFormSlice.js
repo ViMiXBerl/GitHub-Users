@@ -10,9 +10,13 @@ const initialState = {
 
 export const getAsyncUser = createAsyncThunk(
 	"userSearch/getAsyncUser",
-	async (userNameValue, { rejectWithValue, dispatch }) => {
-		const response = await axios.get(`${API_URL}${userNameValue}`);
-		dispatch(setUser(response.data));
+	async (userNameValue, { dispatch, rejectWithValue }) => {
+		try {
+			const response = await axios.get(`${API_URL}${userNameValue}`);
+			dispatch(setUser(response.data));
+		} catch (error) {
+			return rejectWithValue(error.response);
+		}
 	}
 );
 
