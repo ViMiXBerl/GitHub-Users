@@ -6,15 +6,17 @@ import { getAsyncUser } from "./SearchFormSlice";
 import { getAsyncRepos } from "../RepositoriesList/RepositoriesListSlice";
 
 const SearchForm = () => {
+	const dispatch = useDispatch();
+
 	const [userName, setUserName] = useState("");
 
-	const dispatch = useDispatch();
 	const userNameValue = userName;
 
 	return (
 		<Form
 			onSubmit={(event) => {
 				event.preventDefault();
+
 				dispatch(getAsyncUser(userNameValue));
 				dispatch(getAsyncRepos({ userNameValue }));
 			}}

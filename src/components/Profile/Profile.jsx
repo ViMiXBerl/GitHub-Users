@@ -21,7 +21,6 @@ const Profile = () => {
 			<ProfileLink target='blank' href={user.html_url}>
 				{user.login}
 			</ProfileLink>
-
 			<FollowerInfo>
 				<FollowerInfoWrapper>
 					<FollowersIcon />

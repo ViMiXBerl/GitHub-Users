@@ -5,5 +5,3 @@ export { ReactComponent as UserIcon } from "./images/Union.svg";
 export { ReactComponent as FollowersIcon } from "./images/shared.svg";
 export { ReactComponent as FollowingIcon } from "./images/provate.svg";
 export { ReactComponent as EmptyIcon } from "./images/Empty.svg";
-export { ReactComponent as PreviousLabel } from "./images/Rectangle(Stroke).svg";
-export { ReactComponent as NextLabel } from "./images/arrow-right.svg";

@@ -6,11 +6,11 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../SearchForm/SearchFormSlice";
 import { getAsyncRepos } from "../RepositoriesList/RepositoriesListSlice";
-// import "./Pagination.css";
 import { useState } from "react";
 
 const Pagination = ({ itemsPerPage }) => {
 	const dispatch = useDispatch();
+
 	const [pageOffset, setPageOffset] = useState(0);
 
 	const user = useSelector(selectUser);

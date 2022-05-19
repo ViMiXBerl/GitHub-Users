@@ -32,9 +32,6 @@ export const RepositoriesListSlice = createSlice({
 			state.repos = action.payload;
 			state.loading = false;
 		},
-		setPage: (state, action) => {
-			state.page = action.payload;
-		},
 	},
 	extraReducers: (builder) => {
 		builder
